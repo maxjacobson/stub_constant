@@ -13,7 +13,7 @@ describe StubConstant do
   end
 
   it "stubs modules" do
-    expect { Walkable }.to raise_error NameError
+    expect { Walkable }.to raise_error(NameError)
     StubConstant.module(:Walkable)
     expect { Walkable }.to_not raise_error
     expect(Walkable.class).to eq Module

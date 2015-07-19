@@ -1,15 +1,15 @@
 require "stub_constant/version"
 
 class StubConstant
-  def self.module(full_name, &block)
+  def self.module(full_name)
     new.stub_class_or_module(full_name, Module)
   end
 
-  def self.klass(full_name, &block)
+  def self.klass(full_name)
     new.stub_class_or_module(full_name, Class)
   end
 
-  def stub_class_or_module(full_name, kind, &block)
+  def stub_class_or_module(full_name, kind)
     full_name.to_s.split(/::/).inject(Object) do |context, name|
       begin
         # Give autoloading an opportunity to work
