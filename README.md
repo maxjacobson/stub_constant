@@ -1,12 +1,19 @@
 # StubConstant
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/stub_constant`. To experiment with that code, run `bin/console` for an interactive prompt.
+Here's a gem I'm extracting from my friend Máximo's gem [Journeyman][journeyman]
+mostly to understand better how it works and also because I'd like to use it in
+my gems.
 
-TODO: Delete this and the text above, and describe your gem
+[journeyman]: https://github.com/ElMassimo/journeyman
+
+When practicing TDD, you may want to test your code in extreme isolation. The
+idea is that any given test is only exercising the object "under test", and any
+other code should not be included unless it's strictly necessary to do so. The
+other code should also be tested, separately, in isolation.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile (probably in the test section):
 
 ```ruby
 gem 'stub_constant'
@@ -22,20 +29,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Note: this is "optimstic" because I haven't implemented it yet. But I think it
+will look like this:
+
+```ruby
+Cloneable # error
+StubConstant.module(:Cloneable)
+Cloneable # no error
+Cloneable.class #=> Module
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run
+`rake spec` to run the tests. You can also run `bin/console` for an
+interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To
+release a new version, update the version number in `version.rb`, and then run
+`bundle exec rake release`, which will create a git tag for the version, push
+git commits and tags, and push the `.gem` file to
+[rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/stub_constant. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/maxjacobson/stub_constant. This project is intended to be a
+safe, welcoming space for collaboration, and contributors are expected to
+adhere to the [Contributor Covenant](http://contributor-covenant.org) code of
+conduct.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT
+License](http://opensource.org/licenses/MIT).
 
