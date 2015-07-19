@@ -1,0 +1,8 @@
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Style/HashSyntax:
+  EnforcedStyle: hash_rockets
