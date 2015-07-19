@@ -1,5 +1,3 @@
-require "spec_helper"
-
 describe StubConstant do
   it "has a version number" do
     expect(StubConstant::VERSION).not_to be nil
@@ -17,5 +15,11 @@ describe StubConstant do
     StubConstant.module(:Walkable)
     expect { Walkable }.to_not raise_error
     expect(Walkable.class).to eq Module
+  end
+
+  it "stubs values" do
+    expect { LIMIT }.to raise_error(NameError)
+    StubConstant.value(:LIMIT, 4)
+    expect(LIMIT).to eq 4
   end
 end
