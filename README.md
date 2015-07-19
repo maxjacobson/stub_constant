@@ -39,6 +39,12 @@ Cloneable # no error
 Cloneable.class #=> Module
 ```
 
+```ruby
+Dog # error
+StubConstant.klass(:Dog)
+Dog # no error
+Dog.class #=> Class
+```
 
 ## Development
 
