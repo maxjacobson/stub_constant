@@ -1,3 +1,7 @@
+AllCops:
+  Exclude:
+    - "bin/*"
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
@@ -6,3 +10,9 @@ Style/SignalException:
 
 Style/HashSyntax:
   EnforcedStyle: hash_rockets
+
+Metrics/MethodLength:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
