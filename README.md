@@ -29,9 +29,6 @@ Or install it yourself as:
 
 ## Usage
 
-Note: this is "optimstic" because I haven't implemented it yet. But I think it
-will look like this:
-
 ```ruby
 Cloneable # error
 StubConstant.module(:Cloneable)
