@@ -17,7 +17,7 @@ class StubConstant
     @full_name = full_name
   end
 
-  def stub_with(&block)
+  def stub_with
     full_name.to_s.split(/::/).inject(Object) do |context, name|
       begin
         context.const_get(name)
@@ -29,7 +29,7 @@ class StubConstant
         mod = Module.new do
           define_method(:const_missing) do |missing_const_name|
             if missing_const_name.to_s == name.to_s
-              value = block.call
+              value = yield
               const_set(name, value)
               value
             else
