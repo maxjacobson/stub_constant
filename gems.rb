@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-gem "rake", "~> 10.0"
+gem "rake", "~> 11.0"
 gem "rubocop", "~> 0.32"
 gem "rspec"
 
